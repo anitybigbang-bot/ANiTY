@@ -10,13 +10,9 @@
   <meta property="og:title" content="ANiTY – アニメ横断カタログ & レコメンド" />
   <meta property="og:description" content="アニメの横断検索・評価・配信先ナビ。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/ANiTY/" />
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/ANiTY/og-image.png" />
+  <meta property="og:url" content="https://anitybigbang-bot.github.io/ANiTY/" />
+  <meta property="og:image" content="https://anitybigbang-bot.github.io/ANiTY/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Flutter Web 必須 -->
-  <base href="$FLUTTER_BASE_HREF">
-  <link rel="manifest" href="manifest.json">
 
   <style>
     :root { --bg:#0b0f14; --fg:#eaf0f7; --muted:#a9b4c2; --accent:#69e0a5; --card:#131a22; }
@@ -30,27 +26,21 @@
     header { display: flex; align-items: center; justify-content: space-between; }
     .brand { font-weight: 800; letter-spacing: .5px; }
     .badge { padding: 6px 10px; background: #1c2531; border-radius: 999px; color: var(--muted); font-size: 12px; }
-    .hero {
-      margin: 28px 0; padding: 28px; background: rgba(255,255,255,0.02);
+    .hero { margin: 28px 0; padding: 28px; background: rgba(255,255,255,0.02);
       border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
+      box-shadow: 0 10px 30px rgba(0,0,0,.35); }
     .hero h1 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 40px); }
     .hero p { margin: 6px 0 20px; color: var(--muted); line-height: 1.7; }
     .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px;
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px;
       border-radius: 12px; text-decoration: none; font-weight: 700;
       background: var(--accent); color: #052814;
-      transition: transform .08s ease, opacity .15s ease;
-    }
+      transition: transform .08s ease, opacity .15s ease; }
     .btn:hover { transform: translateY(-1px); opacity: .95; }
     .btn.secondary { background: transparent; color: var(--fg); border: 1px solid #2a3544; }
     .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
-    .card {
-      background: var(--card); border: 1px solid #243243; padding: 18px; border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-    }
+    .card { background: var(--card); border: 1px solid #243243; padding: 18px; border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25); }
     .card h3 { margin: 0 0 6px; font-size: 18px; }
     .card p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
     .section-title { margin: 36px 0 14px; font-size: 22px; }
@@ -69,12 +59,9 @@
 
     <section class="hero">
       <h1>アニメ横断カタログ & レコメンド</h1>
-      <p>
-        配信サイト横断の検索・お気に入り・評価。<br/>
-        「観たい」がすぐ見つかる、学生個人開発アプリです。
-      </p>
+      <p>配信サイト横断の検索・お気に入り・評価。<br/>「観たい」がすぐ見つかる、学生個人開発アプリです。</p>
       <div class="cta-row">
-        <a class="btn" href="#" aria-disabled="true">Google Play（近日）</a>
+        <a class="btn" href="./app/">Webアプリを開く</a>
         <a class="btn secondary" href="#privacy">プライバシーポリシー</a>
       </div>
     </section>
@@ -86,9 +73,12 @@
       <div class="card"><h3>軽量・高速</h3><p>データを最適化し、スマホでもサクサク。</p></div>
     </div>
 
-    <h2 class="section-title">お知らせ</h2>
+    <h2 class="section-title">広告/アフィリエイト</h2>
     <div class="card">
-      <p>β版として順次機能を追加中です。ご意見はXで <a href="#" rel="nofollow">@your_handle</a> まで。</p>
+      <p>以下にA8.netやもしも等の広告リンク（HTML）を貼り付けてください。</p>
+      <div id="a8-ads-slot" style="margin-top:10px;">
+        <!-- ASPの広告コードをここに貼り付け -->
+      </div>
     </div>
 
     <h2 id="privacy" class="section-title">プライバシーポリシー（概要）</h2>
@@ -96,29 +86,14 @@
       <p>本アプリは匿名認証や広告クリック計測を用いる場合がありますが、個人を特定できる情報は収集しません。詳細版は後日掲載します。</p>
     </div>
 
-    <h2 class="section-title">広告/アフィリエイト</h2>
-    <div class="card">
-      <p>以下の位置にA8.netのバナー/リンクコードを貼り付けてください。</p>
-      <div id="a8-ads-slot" style="margin-top:10px;">
-        <!-- 例: 
-        <a href="A8_TRACKING_URL" rel="sponsored noopener" target="_blank">
-          <img src="A8_BANNER_IMAGE_URL" alt="Prime Video" />
-        </a>
-        -->
-      </div>
-    </div>
-
     <footer>
       <div>&copy; 2025 ANiTY</div>
       <ul class="inline">
         <li><a href="#privacy">プライバシー</a></li>
         <li><a href="mailto:you@example.com">お問い合わせ</a></li>
-        <li><a href="https://github.com/YOUR-USERNAME/ANiTY" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/anitybigbang-bot/ANiTY" rel="noopener">GitHub</a></li>
       </ul>
     </footer>
   </div>
-
-  <!-- Flutter Web を起動 -->
-  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
