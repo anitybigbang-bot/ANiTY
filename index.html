@@ -5,21 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ANiTY – アニメ横断カタログ & レコメンド</title>
   <meta name="description" content="ANiTYはアニメの横断検索・評価・配信先ナビをまとめて行える学生個人開発アプリです。" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="ANiTY – アニメ横断カタログ & レコメンド" />
   <meta property="og:description" content="アニメの横断検索・評価・配信先ナビ。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/anity-site/" />
-  <meta property="og:image" content="https://YOUR-USERNAME.github.io/anity-site/og-image.png" />
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/ANiTY/" />
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/ANiTY/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <head>
-  <meta charset="UTF-8">
-  <title>Anity</title>
+
+  <!-- Flutter Web 必須 -->
   <base href="$FLUTTER_BASE_HREF">
-  <meta name="description" content="Anity Web App">
   <link rel="manifest" href="manifest.json">
-  ...
-</head>
+
   <style>
     :root { --bg:#0b0f14; --fg:#eaf0f7; --muted:#a9b4c2; --accent:#69e0a5; --card:#131a22; }
     * { box-sizing: border-box; }
@@ -76,7 +74,6 @@
         「観たい」がすぐ見つかる、学生個人開発アプリです。
       </p>
       <div class="cta-row">
-        <!-- ストア公開後に差し替え -->
         <a class="btn" href="#" aria-disabled="true">Google Play（近日）</a>
         <a class="btn secondary" href="#privacy">プライバシーポリシー</a>
       </div>
@@ -84,18 +81,9 @@
 
     <h2 class="section-title">特徴</h2>
     <div class="grid">
-      <div class="card">
-        <h3>横断検索</h3>
-        <p>Netflix/Prime Video/U-NEXT などをまとめて整理。独自の絞り込みも。</p>
-      </div>
-      <div class="card">
-        <h3>評価とおすすめ</h3>
-        <p>星評価・視聴管理。あなた向けに並び替え。</p>
-      </div>
-      <div class="card">
-        <h3>軽量・高速</h3>
-        <p>データを最適化し、スマホでもサクサク。</p>
-      </div>
+      <div class="card"><h3>横断検索</h3><p>Netflix/Prime Video/U-NEXT などをまとめて整理。独自の絞り込みも。</p></div>
+      <div class="card"><h3>評価とおすすめ</h3><p>星評価・視聴管理。あなた向けに並び替え。</p></div>
+      <div class="card"><h3>軽量・高速</h3><p>データを最適化し、スマホでもサクサク。</p></div>
     </div>
 
     <h2 class="section-title">お知らせ</h2>
@@ -111,16 +99,13 @@
     <h2 class="section-title">広告/アフィリエイト</h2>
     <div class="card">
       <p>以下の位置にA8.netのバナー/リンクコードを貼り付けてください。</p>
-      <!-- ▼▼▼ A8.net 広告コード貼り付けエリア ▼▼▼ -->
-      <!-- A8の管理画面 > プログラム > 広告リンク から取得したHTMLをこの中にペースト -->
       <div id="a8-ads-slot" style="margin-top:10px;">
-        <!-- 例）
+        <!-- 例: 
         <a href="A8_TRACKING_URL" rel="sponsored noopener" target="_blank">
           <img src="A8_BANNER_IMAGE_URL" alt="Prime Video" />
         </a>
         -->
       </div>
-      <!-- ▲▲▲ A8.net 広告コード貼り付けエリア ▲▲▲ -->
     </div>
 
     <footer>
@@ -128,9 +113,12 @@
       <ul class="inline">
         <li><a href="#privacy">プライバシー</a></li>
         <li><a href="mailto:you@example.com">お問い合わせ</a></li>
-        <li><a href="https://github.com/YOUR-USERNAME/anity-site" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/YOUR-USERNAME/ANiTY" rel="noopener">GitHub</a></li>
       </ul>
     </footer>
   </div>
+
+  <!-- Flutter Web を起動 -->
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
