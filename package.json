@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "dotenv-cli": "^10.0.0"
+  }
+}
