@@ -1,6 +1,6 @@
 {
-    "name": "anity",
-    "short_name": "anity",
+    "name": "anity_mvp",
+    "short_name": "anity_mvp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
