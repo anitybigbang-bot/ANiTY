@@ -1,0 +1,2254 @@
+[
+  {
+    "id": "kimetsu-no-yaiba-2019",
+    "title": "鬼滅の刃",
+    "kana": "きめつのやいば",
+    "year": 2019,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "人食い鬼となった妹を救うため、竈門炭治郎が鬼狩りの道を進む物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      },
+      {
+        "service": "dアニメストア",
+        "url": "https://animestore.docomo.ne.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "shingeki-no-kyojin-2013",
+    "title": "進撃の巨人",
+    "kana": "しんげきのきょじん",
+    "year": 2013,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "巨人に支配された世界で人類が生き残りを懸けて戦う。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "jujutsu-kaisen-2020",
+    "title": "呪術廻戦",
+    "kana": "じゅじゅつかいせん",
+    "year": 2020,
+    "genres": [
+      "アクション",
+      "ホラー"
+    ],
+    "summary": "呪霊を祓う呪術師たちの闘いを描くダークアクション。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "seishun-buta-yarou-2018",
+    "title": "青春ブタ野郎はバニーガール先輩の夢を見ない",
+    "kana": "せいしゅんぶたやろう",
+    "year": 2018,
+    "genres": [
+      "青春・恋愛",
+      "SF"
+    ],
+    "summary": "思春期症候群に翻弄される高校生たちの不思議で切ない物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kono-subarashii-2016",
+    "title": "この素晴らしい世界に祝福を！",
+    "kana": "このすばらしいせかいにしゅくふくを",
+    "year": 2016,
+    "genres": [
+      "ファンタジー",
+      "コメディ"
+    ],
+    "summary": "異世界で駄女神と仲間たちと繰り広げるドタバタ冒険コメディ。",
+    "streams": [
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      },
+      {
+        "service": "dアニメストア",
+        "url": "https://animestore.docomo.ne.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "re-zero-2016",
+    "title": "Re:ゼロから始める異世界生活",
+    "kana": "りぜろからはじめるいせかいせいかつ",
+    "year": 2016,
+    "genres": [
+      "ファンタジー",
+      "ミステリー"
+    ],
+    "summary": "死ぬたびに時間が巻き戻る少年スバルの過酷な選択の連続。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "haikyuu-2014",
+    "title": "ハイキュー!!",
+    "kana": "はいきゅー",
+    "year": 2014,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "烏野高校バレーボール部の熱い青春と成長の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "tokyo-ghoul-2014",
+    "title": "東京喰種トーキョーグール",
+    "kana": "とうきょうぐーる",
+    "year": 2014,
+    "genres": [
+      "ホラー",
+      "アクション"
+    ],
+    "summary": "人間と喰種の狭間でもがく青年のダークファンタジー。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "hulu",
+        "url": "https://www.hulu.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "detective-conan-1996",
+    "title": "名探偵コナン",
+    "kana": "めいたんていこなん",
+    "year": 1996,
+    "genres": [
+      "ミステリー",
+      "アクション"
+    ],
+    "summary": "身体が小さくなった高校生探偵が難事件に挑む。",
+    "streams": [
+      {
+        "service": "hulu",
+        "url": "https://www.hulu.jp/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "one-piece-1999",
+    "title": "ONE PIECE",
+    "kana": "わんぴーす",
+    "year": 1999,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "海賊王を目指すルフィと仲間たちの大航海冒険譚。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "naruto-2002",
+    "title": "NARUTO -ナルト-",
+    "kana": "なると",
+    "year": 2002,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "落ちこぼれ忍者・ナルトの成長と絆の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "bleach-2004",
+    "title": "BLEACH",
+    "kana": "ぶりーち",
+    "year": 2004,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "死神代行となった高校生が虚と戦うスタイリッシュバトル。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "boku-no-hero-2016",
+    "title": "僕のヒーローアカデミア",
+    "kana": "ぼくのひーろーあかでみあ",
+    "year": 2016,
+    "genres": [
+      "アクション",
+      "青春・恋愛"
+    ],
+    "summary": "無個性の少年が最高のヒーローを目指す学園バトル。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "dr-stone-2019",
+    "title": "Dr.STONE",
+    "kana": "どくたーすとーん",
+    "year": 2019,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "文明が石化から消えた世界で科学でゼロから文明を築く。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "shield-hero-2019",
+    "title": "盾の勇者の成り上がり",
+    "kana": "たてのゆうしゃのなりあがり",
+    "year": 2019,
+    "genres": [
+      "ファンタジー",
+      "アクション"
+    ],
+    "summary": "異世界に召喚された盾の勇者の再起と逆転劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "mahouka-2014",
+    "title": "魔法科高校の劣等生",
+    "kana": "まほうかこうこうのれっとうせい",
+    "year": 2014,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "魔法が技術化した世界で兄妹が学園の陰謀に挑む。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "sao-2012",
+    "title": "ソードアート・オンライン",
+    "kana": "そーどあーと・おんらいん",
+    "year": 2012,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "VRMMOに閉じ込められたプレイヤーたちの生死を懸けた攻略。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kanokari-2020",
+    "title": "彼女、お借りします",
+    "kana": "かのじょおかりします",
+    "year": 2020,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "レンタル彼女をきっかけに始まるドタバタ恋愛劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gotoubun-2019",
+    "title": "五等分の花嫁",
+    "kana": "ごとうぶんのはなよめ",
+    "year": 2019,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "家庭教師と五つ子姉妹の賑やかな恋と受験の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kaguya-sama-2019",
+    "title": "かぐや様は告らせたい",
+    "kana": "かぐやさまはこくらせたい",
+    "year": 2019,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "天才同士の恋愛頭脳戦、告白させたら勝ち。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "bakemonogatari-2009",
+    "title": "化物語",
+    "kana": "ばけものがたり",
+    "year": 2009,
+    "genres": [
+      "ミステリー",
+      "青春・恋愛"
+    ],
+    "summary": "怪異に関わった少女たちと少年の会話劇。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "toradora-2008",
+    "title": "とらドラ！",
+    "kana": "とらどら",
+    "year": 2008,
+    "genres": [
+      "青春・恋愛",
+      "コメディ"
+    ],
+    "summary": "強面男子と手乗りタイガーのじれったい恋物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "k-on-2009",
+    "title": "けいおん！",
+    "kana": "けいおん",
+    "year": 2009,
+    "genres": [
+      "日常",
+      "青春・恋愛"
+    ],
+    "summary": "軽音部女子たちのゆるやかな日々とバンド活動。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "non-non-biyori-2013",
+    "title": "のんのんびより",
+    "kana": "のんのんびより",
+    "year": 2013,
+    "genres": [
+      "日常",
+      "コメディ"
+    ],
+    "summary": "田舎でののんびりとした日常を描く癒やし系。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "yurucamp-2018",
+    "title": "ゆるキャン△",
+    "kana": "ゆるきゃん",
+    "year": 2018,
+    "genres": [
+      "日常",
+      "コメディ"
+    ],
+    "summary": "女子高生たちのゆるいキャンプ活動。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "nichijou-2011",
+    "title": "日常",
+    "kana": "にちじょう",
+    "year": 2011,
+    "genres": [
+      "日常",
+      "コメディ"
+    ],
+    "summary": "何気ない毎日が全力ギャグと不条理で彩られる。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gochiusa-2014",
+    "title": "ご注文はうさぎですか？",
+    "kana": "ごちゅうもんはうさぎですか",
+    "year": 2014,
+    "genres": [
+      "日常",
+      "コメディ"
+    ],
+    "summary": "喫茶店を舞台に少女たちの日々を描くほのぼのコメディ。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "lucky-star-2007",
+    "title": "らき☆すた",
+    "kana": "らきすた",
+    "year": 2007,
+    "genres": [
+      "日常",
+      "コメディ"
+    ],
+    "summary": "オタク女子高生たちのゆるい会話劇。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "railgun-2009",
+    "title": "とある科学の超電磁砲",
+    "kana": "とあるかがくのれーるがん",
+    "year": 2009,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "学園都市の超能力者・御坂美琴の活躍。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "index-2008",
+    "title": "とある魔術の禁書目録",
+    "kana": "とあるまじゅつのいんでっくす",
+    "year": 2008,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "魔術と科学が交錯する学園都市でのバトル。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "steins-gate-2011",
+    "title": "STEINS;GATE",
+    "kana": "しゅたいんずげーと",
+    "year": 2011,
+    "genres": [
+      "SF",
+      "ミステリー"
+    ],
+    "summary": "偶然生まれたタイムリープが仲間の運命を変えていく。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "code-geass-2006",
+    "title": "コードギアス 反逆のルルーシュ",
+    "kana": "こーどぎあすはんぎゃくのるるーしゅ",
+    "year": 2006,
+    "genres": [
+      "SF",
+      "ロボット"
+    ],
+    "summary": "謎の力ギアスを得た少年の反逆劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "eva-1995",
+    "title": "新世紀エヴァンゲリオン",
+    "kana": "しんせいきえゔぁんげりおん",
+    "year": 1995,
+    "genres": [
+      "SF",
+      "ロボット"
+    ],
+    "summary": "謎の敵と戦う少年少女と人類補完計画。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gundam-1979",
+    "title": "機動戦士ガンダム",
+    "kana": "きどうせんしがんだむ",
+    "year": 1979,
+    "genres": [
+      "ロボット",
+      "アクション"
+    ],
+    "summary": "宇宙世紀を舞台に少年がモビルスーツで戦場へ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gundam-seed-2002",
+    "title": "機動戦士ガンダムSEED",
+    "kana": "きどうせんしがんだむしーど",
+    "year": 2002,
+    "genres": [
+      "ロボット",
+      "アクション"
+    ],
+    "summary": "コーディネイターとナチュラルの対立を描く。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gundam-00-2007",
+    "title": "機動戦士ガンダム00",
+    "kana": "きどうせんしがんだむだぶるおー",
+    "year": 2007,
+    "genres": [
+      "ロボット",
+      "SF"
+    ],
+    "summary": "武力介入で戦争根絶を目指す私設武装組織の物語。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "macross-f-2008",
+    "title": "マクロスF",
+    "kana": "まくろすえふ",
+    "year": 2008,
+    "genres": [
+      "ロボット",
+      "SF"
+    ],
+    "summary": "歌とバルキリーと恋が交差する宇宙ドラマ。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gurren-lagann-2007",
+    "title": "天元突破グレンラガン",
+    "kana": "てんげんとっぱぐれんらがん",
+    "year": 2007,
+    "genres": [
+      "ロボット",
+      "アクション"
+    ],
+    "summary": "地下から宇宙へ、ドリルで道を切り開く熱血譚。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "psycho-pass-2012",
+    "title": "PSYCHO-PASS サイコパス",
+    "kana": "さいこぱす",
+    "year": 2012,
+    "genres": [
+      "SF",
+      "ミステリー"
+    ],
+    "summary": "犯罪係数で治安を管理する近未来の警察劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "neverland-2019",
+    "title": "約束のネバーランド",
+    "kana": "やくそくのねばーらんど",
+    "year": 2019,
+    "genres": [
+      "ミステリー",
+      "ホラー"
+    ],
+    "summary": "孤児院の子どもたちが過酷な運命に抗う脱出劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "black-clover-2017",
+    "title": "ブラッククローバー",
+    "kana": "ぶらっくくろーばー",
+    "year": 2017,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "魔法が全ての世界で無魔力の少年が魔法帝を目指す。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "fire-force-2019",
+    "title": "炎炎ノ消防隊",
+    "kana": "えんえんのしょうぼうたい",
+    "year": 2019,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "人体発火現象と戦う特殊消防隊の活躍。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "vinland-saga-2019",
+    "title": "ヴィンランド・サガ",
+    "kana": "ゔぃんらんどさが",
+    "year": 2019,
+    "genres": [
+      "アクション",
+      "青春・恋愛"
+    ],
+    "summary": "北欧の若き戦士の復讐と成長の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "golden-kamuy-2018",
+    "title": "ゴールデンカムイ",
+    "kana": "ごーるでんかむい",
+    "year": 2018,
+    "genres": [
+      "アクション",
+      "ミステリー"
+    ],
+    "summary": "アイヌの埋蔵金を巡るサバイバルと人間ドラマ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "dororo-2019",
+    "title": "どろろ",
+    "kana": "どろろ",
+    "year": 2019,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "身体を奪われた青年と盗賊の子の旅。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "fma-brotherhood-2009",
+    "title": "鋼の錬金術師 FULLMETAL ALCHEMIST",
+    "kana": "はがねのれんきんじゅつし",
+    "year": 2009,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "禁忌の錬成の代償を背負う兄弟の旅。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "cowboy-bebop-1998",
+    "title": "カウボーイビバップ",
+    "kana": "かうぼーいびばっぷ",
+    "year": 1998,
+    "genres": [
+      "SF",
+      "アクション"
+    ],
+    "summary": "宇宙を股にかける賞金稼ぎたちのジャズな日常。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kabaneri-2016",
+    "title": "甲鉄城のカバネリ",
+    "kana": "こうてつじょうのかばねり",
+    "year": 2016,
+    "genres": [
+      "アクション",
+      "ホラー"
+    ],
+    "summary": "不死の怪物が跋扈する蒸気機関の世界での戦い。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "ushio-to-tora-2015",
+    "title": "うしおととら",
+    "kana": "うしおととら",
+    "year": 2015,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "退魔の槍を得た少年と妖怪の相棒譚。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "hunter-x-hunter-2011",
+    "title": "HUNTER×HUNTER (2011)",
+    "kana": "はんたーはんたー",
+    "year": 2011,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "念能力が渦巻く世界で少年が父を追う冒険。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "jojo-2012",
+    "title": "ジョジョの奇妙な冒険",
+    "kana": "じょじょのきみょうなぼうけん",
+    "year": 2012,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "世代を超えて続く宿命の戦い。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "mob-psycho-2016",
+    "title": "モブサイコ100",
+    "kana": "もぶさいこひゃく",
+    "year": 2016,
+    "genres": [
+      "アクション",
+      "コメディ"
+    ],
+    "summary": "影の超能力少年と師匠の成長譚。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "one-punch-man-2015",
+    "title": "ワンパンマン",
+    "kana": "わんぱんまん",
+    "year": 2015,
+    "genres": [
+      "アクション",
+      "コメディ"
+    ],
+    "summary": "どんな敵もワンパンで倒す最強ヒーローの日常。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kanata-no-astra-2019",
+    "title": "彼方のアストラ",
+    "kana": "かなたのあすとら",
+    "year": 2019,
+    "genres": [
+      "SF",
+      "ミステリー"
+    ],
+    "summary": "宇宙で漂流した生徒たちの帰還と陰謀の謎。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "made-in-abyss-2017",
+    "title": "メイドインアビス",
+    "kana": "めいどいんあびす",
+    "year": 2017,
+    "genres": [
+      "ファンタジー",
+      "ミステリー"
+    ],
+    "summary": "底知れぬ大穴に挑む探窟家の少女と少年。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "isekai-shokudo-2017",
+    "title": "異世界食堂",
+    "kana": "いせかいしょくどう",
+    "year": 2017,
+    "genres": [
+      "ファンタジー",
+      "日常"
+    ],
+    "summary": "扉の向こうの異世界客が訪れる洋食屋の物語。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "spy-family-2022",
+    "title": "SPY×FAMILY",
+    "kana": "すぱいふぁみりー",
+    "year": 2022,
+    "genres": [
+      "コメディ",
+      "日常"
+    ],
+    "summary": "仮初めの家族がそれぞれの秘密を抱えて日常を織りなす。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "Disney+",
+        "url": "https://www.disneyplus.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "violet-evergarden-2018",
+    "title": "ヴァイオレット・エヴァーガーデン",
+    "kana": "ゔぁいおれっとえばーがーでん",
+    "year": 2018,
+    "genres": [
+      "青春・恋愛",
+      "日常"
+    ],
+    "summary": "感情を知らなかった少女が手紙を綴りながら心を知る。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "3gatsu-2016",
+    "title": "3月のライオン",
+    "kana": "さんがつのらいおん",
+    "year": 2016,
+    "genres": [
+      "青春・恋愛",
+      "日常"
+    ],
+    "summary": "若き棋士の孤独と再生のドラマ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "shigatsu-2014",
+    "title": "四月は君の嘘",
+    "kana": "しがつはきみのうそ",
+    "year": 2014,
+    "genres": [
+      "青春・恋愛",
+      "日常"
+    ],
+    "summary": "ピアノ少年とヴァイオリニストの切ない青春。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "bocchi-the-rock-2022",
+    "title": "ぼっち・ざ・ろっく！",
+    "kana": "ぼっちざろっく",
+    "year": 2022,
+    "genres": [
+      "コメディ",
+      "日常"
+    ],
+    "summary": "陰キャ少女がバンドで殻を破っていく。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "bisque-doll-2022",
+    "title": "その着せ替え人形は恋をする",
+    "kana": "そのびすくどーるはこいをする",
+    "year": 2022,
+    "genres": [
+      "青春・恋愛",
+      "コメディ"
+    ],
+    "summary": "雛人形少年とコスプレ少女の創作と恋。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "takagi-2018",
+    "title": "からかい上手の高木さん",
+    "kana": "からかいじょうずのたかぎさん",
+    "year": 2018,
+    "genres": [
+      "コメディ",
+      "日常"
+    ],
+    "summary": "からかいと照れの中学生ラブコメ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "haruhi-2006",
+    "title": "涼宮ハルヒの憂鬱",
+    "kana": "すずみやはるひのゆううつ",
+    "year": 2006,
+    "genres": [
+      "SF",
+      "コメディ"
+    ],
+    "summary": "不思議を呼ぶ少女と巻き込まれる少年の非日常。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "fruits-basket-2019",
+    "title": "フルーツバスケット (2019)",
+    "kana": "ふるーつばすけっと",
+    "year": 2019,
+    "genres": [
+      "青春・恋愛",
+      "日常"
+    ],
+    "summary": "十二支の呪いを背負う家と少女の再生の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "anohana-2011",
+    "title": "あの日見た花の名前を僕達はまだ知らない。",
+    "kana": "あのひみたはなのなまえをぼくたちはまだしらない",
+    "year": 2011,
+    "genres": [
+      "青春・恋愛",
+      "日常"
+    ],
+    "summary": "幼なじみの未練と成長を描く青春群像劇。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "oreimo-2010",
+    "title": "俺の妹がこんなに可愛いわけがない",
+    "kana": "おれのいもうとがこんなにかわいいわけがない",
+    "year": 2010,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "オタク趣味が暴かれた妹と兄のすったもんだ。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "nisekoi-2014",
+    "title": "ニセコイ",
+    "kana": "にせこい",
+    "year": 2014,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "偽装恋人から始まるハーレムコメディ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "chunibyo-2012",
+    "title": "中二病でも恋がしたい！",
+    "kana": "ちゅうにびょうでもこいがしたい",
+    "year": 2012,
+    "genres": [
+      "コメディ",
+      "青春・恋愛"
+    ],
+    "summary": "黒歴史と向き合う高校生たちの恋と成長。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "charlotte-2015",
+    "title": "Charlotte",
+    "kana": "しゃーろっと",
+    "year": 2015,
+    "genres": [
+      "SF",
+      "青春・恋愛"
+    ],
+    "summary": "特殊能力を持つ少年たちの出会いと別れ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "plastic-memories-2015",
+    "title": "プラスティック・メモリーズ",
+    "kana": "ぷらすてぃっく・めもりーず",
+    "year": 2015,
+    "genres": [
+      "SF",
+      "青春・恋愛"
+    ],
+    "summary": "期限付きアンドロイドの回収現場で芽生える想い。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "higurashi-2006",
+    "title": "ひぐらしのなく頃に",
+    "kana": "ひぐらしのなくころに",
+    "year": 2006,
+    "genres": [
+      "ホラー",
+      "ミステリー"
+    ],
+    "summary": "田舎の村で繰り返される惨劇の謎。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "another-2012",
+    "title": "Another",
+    "kana": "あなざー",
+    "year": 2012,
+    "genres": [
+      "ホラー",
+      "ミステリー"
+    ],
+    "summary": "呪われたクラスに転校してきた少年の恐怖。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "madoka-2011",
+    "title": "魔法少女まどか☆マギカ",
+    "kana": "まほうしょうじょまどかまぎか",
+    "year": 2011,
+    "genres": [
+      "ファンタジー",
+      "ホラー"
+    ],
+    "summary": "願いと代償が交錯する新感覚魔法少女。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "mirai-nikki-2011",
+    "title": "未来日記",
+    "kana": "みらいにっき",
+    "year": 2011,
+    "genres": [
+      "ミステリー",
+      "ホラー"
+    ],
+    "summary": "未来が書かれた日記を手にした者たちのサバイバル。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "elfen-lied-2004",
+    "title": "エルフェンリート",
+    "kana": "えるふぇんりーと",
+    "year": 2004,
+    "genres": [
+      "ホラー",
+      "アクション"
+    ],
+    "summary": "角を持つ少女と流血に彩られた逃避行。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "parasyte-2014",
+    "title": "寄生獣 セイの格率",
+    "kana": "きせいじゅうせいのかくりつ",
+    "year": 2014,
+    "genres": [
+      "ホラー",
+      "アクション"
+    ],
+    "summary": "右手に寄生生物を宿した少年の葛藤と戦い。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "death-note-2006",
+    "title": "DEATH NOTE",
+    "kana": "ですのーと",
+    "year": 2006,
+    "genres": [
+      "ミステリー",
+      "ホラー"
+    ],
+    "summary": "名前を書いた者を殺せるノートを巡る頭脳戦。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "saiki-kusuo-2016",
+    "title": "斉木楠雄のΨ難",
+    "kana": "さいきくすおのさいなん",
+    "year": 2016,
+    "genres": [
+      "コメディ",
+      "日常"
+    ],
+    "summary": "超能力者高校生の平穏を望む日常系ギャグ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "gintama-2006",
+    "title": "銀魂",
+    "kana": "ぎんたま",
+    "year": 2006,
+    "genres": [
+      "コメディ",
+      "アクション"
+    ],
+    "summary": "江戸×SFの何でもアリな人情コメディ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "dgrayman-2006",
+    "title": "D.Gray-man",
+    "kana": "でぃーぐれいまん",
+    "year": 2006,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "悪性機械アクマと戦うエクソシストたち。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "toriko-2011",
+    "title": "トリコ",
+    "kana": "とりこ",
+    "year": 2011,
+    "genres": [
+      "アクション",
+      "コメディ"
+    ],
+    "summary": "究極の食材を求める美食屋の冒険。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "prince-of-tennis-2001",
+    "title": "テニスの王子様",
+    "kana": "てにすのおうじさま",
+    "year": 2001,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "天才中学生テニスプレイヤーの挑戦。",
+    "streams": [
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "yowamushi-pedal-2013",
+    "title": "弱虫ペダル",
+    "kana": "よわむしぺだる",
+    "year": 2013,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "オタク少年が自転車競技部で才能を開花。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "ace-of-diamond-2013",
+    "title": "ダイヤのA",
+    "kana": "だいやのえーす",
+    "year": 2013,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "エースを目指す投手の高校野球ドラマ。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "hajime-no-ippo-2000",
+    "title": "はじめの一歩",
+    "kana": "はじめのいっぽ",
+    "year": 2000,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "いじめられっ子がボクシングで強くなる。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "ping-pong-2014",
+    "title": "ピンポン THE ANIMATION",
+    "kana": "ぴんぽん",
+    "year": 2014,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "天才と凡人、卓球が照らす青春の光と影。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "free-2013",
+    "title": "Free!",
+    "kana": "ふりー",
+    "year": 2013,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "男子水泳部の友情と絆。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kuroko-2012",
+    "title": "黒子のバスケ",
+    "kana": "くろこのばすけ",
+    "year": 2012,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "幻の6人目と仲間が頂点を目指す。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "blue-lock-2022",
+    "title": "ブルーロック",
+    "kana": "ぶるーろっく",
+    "year": 2022,
+    "genres": [
+      "スポーツ",
+      "アクション"
+    ],
+    "summary": "エゴと才能がぶつかるストライカー育成計画。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "inazuma-eleven-2008",
+    "title": "イナズマイレブン",
+    "kana": "いなずまいれぶん",
+    "year": 2008,
+    "genres": [
+      "スポーツ",
+      "ファンタジー"
+    ],
+    "summary": "必殺技が飛び交う熱血サッカー。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "captain-tsubasa-1983",
+    "title": "キャプテン翼",
+    "kana": "きゃぷてんつばさ",
+    "year": 1983,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "サッカーで世界を目指す少年の成長。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "days-2016",
+    "title": "DAYS",
+    "kana": "でいず",
+    "year": 2016,
+    "genres": [
+      "スポーツ",
+      "青春・恋愛"
+    ],
+    "summary": "初心者サッカー少年の泥臭い努力。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "kemono-friends-2017",
+    "title": "けものフレンズ",
+    "kana": "けものふれんず",
+    "year": 2017,
+    "genres": [
+      "ファンタジー",
+      "日常"
+    ],
+    "summary": "ジャパリパークを巡るフレンズたちの旅。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "berserk-1997",
+    "title": "ベルセルク",
+    "kana": "べるせるく",
+    "year": 1997,
+    "genres": [
+      "アクション",
+      "ファンタジー"
+    ],
+    "summary": "壮絶な運命に抗う剣士ガッツのダークファンタジー。",
+    "streams": [
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      },
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "overlord-2015",
+    "title": "オーバーロード",
+    "kana": "おーばーろーど",
+    "year": 2015,
+    "genres": [
+      "ファンタジー",
+      "アクション"
+    ],
+    "summary": "骸骨魔導王が異世界で君臨する。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "konosuba-anshin-duplicate-avoid-2019",
+    "title": "このすば 紅伝説",
+    "kana": "このすばべにでんせつ",
+    "year": 2019,
+    "genres": [
+      "ファンタジー",
+      "コメディ"
+    ],
+    "summary": "『このすば』劇場版。仲間の里で大騒動。",
+    "streams": [
+      {
+        "service": "U-NEXT",
+        "url": "https://video.unext.jp/"
+      },
+      {
+        "service": "dアニメストア",
+        "url": "https://animestore.docomo.ne.jp/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "overlord-ii-2018",
+    "title": "オーバーロードII",
+    "kana": "おーばーろーどつー",
+    "year": 2018,
+    "genres": [
+      "ファンタジー",
+      "アクション"
+    ],
+    "summary": "王国とナザリックの勢力図が動き出す。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "no-game-no-life-2014",
+    "title": "ノーゲーム・ノーライフ",
+    "kana": "のーげーむのーらいふ",
+    "year": 2014,
+    "genres": [
+      "ファンタジー",
+      "コメディ"
+    ],
+    "summary": "ゲームで全てが決まる世界に挑む天才兄妹。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  },
+  {
+    "id": "danmachi-2015",
+    "title": "ダンジョンに出会いを求めるのは間違っているだろうか",
+    "kana": "だんじょんにであいをもとめるのはまちがっているだろうか",
+    "year": 2015,
+    "genres": [
+      "ファンタジー",
+      "アクション"
+    ],
+    "summary": "迷宮都市で成長する少年と女神の物語。",
+    "streams": [
+      {
+        "service": "Netflix",
+        "url": "https://www.netflix.com/"
+      },
+      {
+        "service": "Prime Video",
+        "url": "https://www.primevideo.com/"
+      }
+    ],
+    "updatedAt": "2025-09-09T00:00:00Z"
+  }
+]
