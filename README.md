@@ -1,4 +1,4 @@
-# anity
+# ANiTY
 
 A new Flutter project.
 
