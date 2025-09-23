@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ANiTY – アニメ横断カタログ & レコメンド</title>
+  <meta name="description" content="ANiTYはアニメの横断検索・評価・配信先ナビをまとめて行える学生個人開発アプリです。" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="ANiTY – アニメ横断カタログ & レコメンド" />
+  <meta property="og:description" content="アニメの横断検索・評価・配信先ナビ。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anitybigbang-bot.github.io/ANiTY/" />
+  <meta property="og:image" content="https://anitybigbang-bot.github.io/ANiTY/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root { --bg:#0b0f14; --fg:#eaf0f7; --muted:#a9b4c2; --accent:#69e0a5; --card:#131a22; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+      background: linear-gradient(180deg, #0b0f14 0%, #0f1722 100%); color: var(--fg);
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    header { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 800; letter-spacing: .5px; }
+    .badge { padding: 6px 10px; background: #1c2531; border-radius: 999px; color: var(--muted); font-size: 12px; }
+    .hero { margin: 28px 0; padding: 28px; background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(26px, 4vw, 40px); }
+    .hero p { margin: 6px 0 20px; color: var(--muted); line-height: 1.7; }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px;
+      border-radius: 12px; text-decoration: none; font-weight: 700;
+      background: var(--accent); color: #052814;
+      transition: transform .08s ease, opacity .15s ease; }
+    .btn:hover { transform: translateY(-1px); opacity: .95; }
+    .btn.secondary { background: transparent; color: var(--fg); border: 1px solid #2a3544; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+    .card { background: var(--card); border: 1px solid #243243; padding: 18px; border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+    .section-title { margin: 36px 0 14px; font-size: 22px; }
+    footer { margin: 40px 0 10px; color: var(--muted); font-size: 13px; }
+    ul.inline { list-style: none; padding: 0; margin: 8px 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+    ul.inline a { color: var(--fg); opacity: .8; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">ANiTY</div>
+      <div class="badge">学生個人開発 / β</div>
+    </header>
+
+    <section class="hero">
+      <h1>アニメ横断カタログ & レコメンド</h1>
+      <p>配信サイト横断の検索・お気に入り・評価。<br/>「観たい」がすぐ見つかる、学生個人開発アプリです。</p>
+      <div class="cta-row">
+        <a class="btn" href="./app/">Webアプリを開く</a>
+        <a class="btn secondary" href="#privacy">プライバシーポリシー</a>
+      </div>
+    </section>
+
+    <h2 class="section-title">特徴</h2>
+    <div class="grid">
+      <div class="card"><h3>横断検索</h3><p>Netflix/Prime Video/U-NEXT などをまとめて整理。独自の絞り込みも。</p></div>
+      <div class="card"><h3>評価とおすすめ</h3><p>星評価・視聴管理。あなた向けに並び替え。</p></div>
+      <div class="card"><h3>軽量・高速</h3><p>データを最適化し、スマホでもサクサク。</p></div>
+    </div>
+
+    <h2 class="section-title">広告/アフィリエイト</h2>
+    <div class="card">
+      <p>以下にA8.netやもしも等の広告リンク（HTML）を貼り付けてください。</p>
+      <div id="a8-ads-slot" style="margin-top:10px;">
+        <!-- ASPの広告コードをここに貼り付け -->
+      </div>
+    </div>
+
+    <h2 id="privacy" class="section-title">プライバシーポリシー（概要）</h2>
+    <div class="card">
+      <p>本アプリは匿名認証や広告クリック計測を用いる場合がありますが、個人を特定できる情報は収集しません。詳細版は後日掲載します。</p>
+    </div>
+
+    <footer>
+      <div>&copy; 2025 ANiTY</div>
+      <ul class="inline">
+        <li><a href="#privacy">プライバシー</a></li>
+        <li><a href="mailto:you@example.com">お問い合わせ</a></li>
+        <li><a href="https://github.com/anitybigbang-bot/ANiTY" rel="noopener">GitHub</a></li>
+      </ul>
+    </footer>
+  </div>
+</body>
+</html>
+
