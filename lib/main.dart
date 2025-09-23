@@ -11,7 +11,6 @@ import 'pages/admin_page.dart';
 
 // 追加ページ（ログイン/サインアップUI・ログイン後ホーム）
 import 'pages/login_page.dart';
-import 'pages/home_page.dart';
 import 'pages/set_password_page.dart';     // もし未使用なら消してOK
 import 'pages/signup_request_page.dart';   // もし未使用なら消してOK
 
@@ -74,7 +73,7 @@ class AuthGate extends StatelessWidget {
         final session = supabase.auth.currentSession;
         if (session != null) {
           // ログイン後のホーム（必要なら AnimeListPage に差し替えてOK）
-          return const HomePage();
+          return const AnimeListPage();
           // 例: return const AnimeListPage();
         } else {
           return const LoginPage();
