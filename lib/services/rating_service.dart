@@ -1,9 +1,9 @@
 // =====================================
-// lib/services/rating_service.dart
+// lib/services/rating_service.dart（完成版）
 // =====================================
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
 import '../models/anime.dart';
 
 /// 未ログイン（匿名含む）時に投げる例外
@@ -14,38 +14,35 @@ class AuthRequired implements Exception {
   String toString() => message;
 }
 
-/// Supabaseの匿名ユーザーかどうかを判定（null安全）
+/// Supabase の User が匿名アカウントかを判定
 bool _isAnonymousUser(User? user) {
   if (user == null) return false;
 
-  // appMetadata から判定（provider / providers）
+  // appMetadata から判定
   final appMeta = user.appMetadata ?? const <String, dynamic>{};
-  final provider = appMeta['provider'];
-  if (provider == 'anonymous') return true;
-
-  final providersField = appMeta['providers'];
-  if (providersField is List && providersField.contains('anonymous')) {
+  if (appMeta['provider'] == 'anonymous') return true;
+  if (appMeta['providers'] is List &&
+      (appMeta['providers'] as List).contains('anonymous')) {
     return true;
   }
 
-  // SDK 実装差異向けの保険
+  // SDK によっては isAnonymous プロパティがある
   try {
     final dyn = user as dynamic;
     if (dyn.isAnonymous == true) return true;
   } catch (_) {}
 
-  // userMetadata 側にフラグがある場合の保険
+  // userMetadata 側の保険
   final meta = user.userMetadata;
-  if (meta is Map && meta?['is_anonymous'] == true) {
+  if (meta != null && meta is Map && meta['is_anonymous'] == true) {
     return true;
   }
-
   return false;
 }
 
-/// 単一ユーザー想定の RatingsService
-/// - rate(animeId, stars) : stars=null で未評価(削除)
-/// - attachRatings       : 一覧に avg/count と自分の星を埋める
+/// 単一ユーザー用の RatingsService
+/// - [rate]       星評価を追加/更新/削除
+/// - [attachRatings] 一覧に avg/count + 自分の星を合成
 abstract class RatingsService {
   Future<List<Anime>> attachRatings(List<Anime> anime);
   Future<Anime> rate(String animeId, int? stars);
@@ -55,7 +52,7 @@ abstract class RatingsService {
 }
 
 // =========================
-// Mock 実装（ローカルのみ）
+// ローカルのみのモック実装
 // =========================
 class _MockRatingsService implements RatingsService {
   final Map<String, _RatingAgg> _store = {};
@@ -106,17 +103,6 @@ class _RatingAgg {
     user = null;
   }
 
-  void applySeed(double avg, int? c) {
-    if (c == null || c == 0) {
-      count = 0;
-      sum = 0;
-      return;
-    }
-    count = c;
-    sum = avg * c;
-  }
-
-  /// ユーザー評価の追加/更新/削除
   void setUser(int? newRating) {
     final old = user;
 
@@ -150,10 +136,10 @@ class _RatingAgg {
 // Supabase 連携実装
 // =============================
 class _SupabaseRatingsService implements RatingsService {
-  static const _kLocalRatedPrefix = 'rated:'; // 'rated:anime_id' -> 1..5
+  static const _kLocalRatedPrefix = 'rated:'; // SharedPreferences キー
   SupabaseClient get _sb => Supabase.instance.client;
 
-  // ---- ローカル星の読み書き（UI 即時反映用）----
+  // ---- ローカル星の読み書き ----
   Future<int?> _getLocalRating(String animeId) async {
     final sp = await SharedPreferences.getInstance();
     return sp.getInt('$_kLocalRatedPrefix$animeId');
@@ -169,7 +155,7 @@ class _SupabaseRatingsService implements RatingsService {
     }
   }
 
-  // ---- 一覧に avg/count と自分の星 を埋める ----
+  // ---- 一覧に avg/count と自分の星 を合成 ----
   @override
   Future<List<Anime>> attachRatings(List<Anime> anime) async {
     if (anime.isEmpty) return anime;
@@ -204,7 +190,7 @@ class _SupabaseRatingsService implements RatingsService {
         );
       }).toList();
     } catch (_) {
-      // オフライン/権限問題: ローカル星のみ反映
+      // 失敗時はローカル星だけ反映
       final sp = await SharedPreferences.getInstance();
       return anime.map((a) {
         final my = sp.getInt('$_kLocalRatedPrefix${a.id}') ?? a.userRating;
@@ -213,27 +199,26 @@ class _SupabaseRatingsService implements RatingsService {
     }
   }
 
-  // ---- 評価（追加/更新/削除）→ 集計を取り直して差分返却 ----
+  // ---- 評価（追加/更新/削除） ----
   @override
   Future<Anime> rate(String animeId, int? stars) async {
-    // 0) 認証チェック（未ログイン or 匿名はログイン誘導）
+    // 認証チェック（未ログイン or 匿名はログイン誘導）
     final user = _sb.auth.currentUser;
     if (user == null || _isAnonymousUser(user)) {
-      // UI 側の on AuthRequired でログイン画面へ遷移させる
       throw const AuthRequired();
     }
 
-    // 1) まずローカルを更新（UI 即時反映）
+    // 1) まずローカル更新（UI 即時反映）
     await _setLocalRating(animeId, stars);
 
     try {
-      // 2) クラウド反映（NULL なら削除扱い）
+      // 2) Supabase RPC へ送信
       await _sb.rpc('upsert_rating', params: {
         'p_anime_id': animeId,
         'p_rating': stars,
       });
 
-      // 3) 反映後の集計を読み直し
+      // 3) 最新の集計を読み直し
       final rows = await _sb
           .from('rating_aggregates')
           .select('avg_rating, rating_count')
@@ -257,7 +242,7 @@ class _SupabaseRatingsService implements RatingsService {
         userRating: stars,
       );
     } catch (_) {
-      // 失敗時：ローカル星だけ返す（avg/count は据え置き扱い）
+      // 失敗時はローカル星のみ返す
       final my = await _getLocalRating(animeId);
       return Anime(
         id: animeId,

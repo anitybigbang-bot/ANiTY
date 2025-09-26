@@ -1,11 +1,16 @@
 // =====================================
-// lib/models/anime.dart
+// lib/models/anime.dart（完成版）
+//  - streams: [{service, url}] を想定（文字列JSON/配列どちらでもOK）
+//  - avg_rating / rating_count / user_rating の型ゆらぎ吸収
+//  - UI側の a.summary / a.streams / a.genres に対応
 // =====================================
+
+import 'dart:convert';
 
 /// 配信リンク1件（streamsの要素）
 class StreamLink {
-  final String service; // Netflix, Prime Video など
-  final String url;
+  final String service; // 例: 'Netflix', 'Prime Video' など
+  final String url;     // 任意。空文字のこともある
 
   const StreamLink({required this.service, required this.url});
 
@@ -38,13 +43,13 @@ class Anime {
   final String? kana;
   final int? year;
   final List<String> genres;
-  final String? summary;            // 旧 undefined_getter 対策で任意
-  final List<StreamLink> streams;   // jsonb: [{service,url}]
+  final String? summary;              // 任意
+  final List<StreamLink> streams;     // jsonb: [{service,url}]
 
-  // 集計/個人評価（rating_totals + my_ratings 結合結果）
-  final double? avgRating;          // avg_rating
-  final int? ratingCount;           // rating_count
-  final int? userRating;            // user_rating (1..5)
+  // 集計/個人評価
+  final double? avgRating;            // avg_rating
+  final int? ratingCount;             // rating_count
+  final int? userRating;              // user_rating (1..5)
 
   const Anime({
     required this.id,
@@ -59,27 +64,37 @@ class Anime {
     this.userRating,
   });
 
-  /// Supabaseの戻り(Map)→Anime（カラム名のスネーク/キャメル混在に耐性あり）
+  /// Supabaseの戻り(Map)→Anime（キー名のスネーク/キャメル混在・型ゆらぎに耐性）
   factory Anime.fromSupabase(Map<String, dynamic> m) => Anime.fromJson(m);
 
-  /// キャメル/スネーク両対応 + 型安全に変換
   static Anime fromJson(Map<String, dynamic> j) {
-    // streams: jsonb array -> List<StreamLink>
-    final streamsRaw = (j['streams'] is List) ? j['streams'] as List : const [];
-    final streams = streamsRaw
-        .map((e) => StreamLink.fromJson(Map<String, dynamic>.from(e as Map)))
-        .toList();
+    // ---- streams: jsonb array -> List<StreamLink>（文字列JSONの場合にも対応）
+    List<dynamic> streamsRawList = const [];
+    final rawStreams = j['streams'];
+    if (rawStreams is String && rawStreams.trim().isNotEmpty) {
+      try {
+        final decoded = json.decode(rawStreams);
+        if (decoded is List) streamsRawList = decoded;
+      } catch (_) {
+        // パース失敗時は空扱い
+      }
+    } else if (rawStreams is List) {
+      streamsRawList = rawStreams;
+    }
+    final streams = streamsRawList.map((e) {
+      final map = Map<String, dynamic>.from(e as Map);
+      return StreamLink.fromJson(map);
+    }).toList();
 
-    // genres: text[] -> List<String>
+    // ---- genres: text[] -> List<String>
     final genresRaw = (j['genres'] is List) ? j['genres'] as List : const [];
     final genres = genresRaw.map((e) => e.toString()).toList();
 
-    // 平均評価: num? -> double?
+    // ---- 平均評価: num? -> double?
     final avgRaw = j['avg_rating'] ?? j['avgRating'];
-    final double? avg =
-        (avgRaw == null) ? null : (avgRaw as num).toDouble();
+    final double? avg = (avgRaw == null) ? null : (avgRaw as num).toDouble();
 
-    // 件数: dynamic -> int?
+    // ---- 件数: dynamic -> int?
     final cntRaw = j['rating_count'] ?? j['ratingCount'];
     final int? ratingCnt = (cntRaw is int)
         ? cntRaw
@@ -87,20 +102,24 @@ class Anime {
             ? cntRaw.toInt()
             : null;
 
-    // 自分の評価: dynamic -> int?
+    // ---- 自分の評価: dynamic -> int?
     final urRaw = j['user_rating'] ?? j['userRating'];
     final int? userRating =
         (urRaw is int) ? urRaw : (urRaw is num) ? urRaw.toInt() : null;
+
+    // ---- 年: dynamic -> int?
+    final yRaw = j['year'];
+    final int? year = (yRaw is int)
+        ? yRaw
+        : (yRaw is num)
+            ? yRaw.toInt()
+            : null;
 
     return Anime(
       id: (j['id'] ?? '').toString(),
       title: (j['title'] ?? '').toString(),
       kana: j['kana'] as String?,
-      year: (j['year'] is int)
-          ? j['year'] as int
-          : (j['year'] is num)
-              ? (j['year'] as num).toInt()
-              : null,
+      year: year,
       genres: genres,
       summary: j['summary'] as String?,
       streams: streams,
@@ -110,7 +129,6 @@ class Anime {
     );
   }
 
-  /// JSON化（アプリ内保持やテスト用）
   Map<String, dynamic> toJson() => {
         'id': id,
         'title': title,
@@ -124,11 +142,9 @@ class Anime {
         'user_rating': userRating,
       };
 
-  /// リスト変換
   static List<Anime> listFromJson(List<dynamic> arr) =>
       arr.map((e) => Anime.fromJson(Map<String, dynamic>.from(e))).toList();
 
-  /// 一部だけ更新した新インスタンスを返す
   Anime copyWith({
     String? title,
     String? kana,
