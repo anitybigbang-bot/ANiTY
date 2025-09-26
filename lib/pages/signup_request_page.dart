@@ -31,7 +31,7 @@ class _SignUpRequestPageState extends State<SignUpRequestPage> {
     // 本番用の set-password ページにリダイレクトするよう設定
     await Supabase.instance.client.auth.signInWithOtp(
       email: email,
-      emailRedirectTo: 'https://anitybigbang-bot.github.io/ANiTY/app_20250926_170307/#/set-password',
+      emailRedirectTo: 'https://anitybigbang-bot.github.io/ANiTY/app_20250926_183526/#/set-password',
     );
 
     if (!mounted) return;
