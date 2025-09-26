@@ -1,8 +1,10 @@
 // =====================================
-// lib/pages/anime_list_page.dart
+// lib/pages/anime_list_page.dart  （シート優先：SHEET_CSV_URL があればシート→失敗時 Supabase）
 // =====================================
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; // ★ 追加
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart'; // 認証状態チェック用
 
@@ -36,6 +38,10 @@ class _AnimeListPageState extends State<AnimeListPage> {
   void _log(String msg) {
     if (kDebugMode) debugPrint('[AnimeListPage] $msg');
   }
+
+  // ★ 追加：ビルド時に --dart-define=SHEET_CSV_URL=... を渡すと入る
+  static const String _sheetCsvUrl =
+      String.fromEnvironment('SHEET_CSV_URL', defaultValue: '');
 
   late final AnimeRepository _repo;
   late final RatingsService _ratings;
@@ -82,15 +88,30 @@ class _AnimeListPageState extends State<AnimeListPage> {
     _loadFuture = _bootstrap();
   }
 
-  /// 初期化〜一覧取得
+  /// 初期化〜一覧取得（シート優先→失敗なら Supabase）
   Future<void> _bootstrap() async {
-    _log('_bootstrap: start');
+    _log('_bootstrap: start (sheetFirst=${_sheetCsvUrl.isNotEmpty})');
     try {
       await _loadPresets();
       await _loadWatched();
 
-      _log('_bootstrap: fetchAll');
-      final list = await _repo.fetchAll(); // Supabase から一覧（RPC 実装想定）
+      List<Anime> list = [];
+
+      // --- シート優先 ---
+      if (_sheetCsvUrl.isNotEmpty) {
+        try {
+          list = await _fetchFromSheetCsv(_sheetCsvUrl);
+          _log('_bootstrap: sheet rows=${list.length}');
+        } catch (e) {
+          _log('_bootstrap: sheet fetch failed -> fallback to Supabase. error=$e');
+        }
+      }
+
+      // --- フォールバック：Supabase ---
+      if (list.isEmpty) {
+        _log('_bootstrap: fetchAll(Supabase)');
+        list = await _repo.fetchAll();
+      }
 
       _log('_bootstrap: attachRatings');
       final withRatings = await _ratings.attachRatings(list); // 自分の評価を合成（RPCで同梱なら恒等）
@@ -116,6 +137,105 @@ class _AnimeListPageState extends State<AnimeListPage> {
       _log('_bootstrap: error=$e');
       rethrow; // FutureBuilder でも検知できるように投げ直す
     }
+  }
+
+  // ===== シートCSV → Anime[] 変換 =====
+  Future<List<Anime>> _fetchFromSheetCsv(String url) async {
+    _log('_fetchFromSheetCsv: GET $url');
+    final res = await http.get(Uri.parse(url));
+    if (res.statusCode != 200) {
+      throw Exception('CSV HTTP ${res.statusCode}');
+    }
+    final csv = utf8.decode(res.bodyBytes);
+
+    // 1行目=ヘッダ（id,title,kana,summary,year,genres,services）
+    final lines = csv.split(RegExp(r'\r?\n')).where((l) => l.trim().isNotEmpty).toList();
+    if (lines.isEmpty) return [];
+
+    final header = _splitCsvLine(lines.first);
+    final idx = {
+      for (int i = 0; i < header.length; i++) header[i].trim().toLowerCase(): i
+    };
+
+    List<Anime> out = [];
+    for (int i = 1; i < lines.length; i++) {
+      final cols = _splitCsvLine(lines[i]);
+
+      String get(String name) {
+        final j = idx[name];
+        return (j == null || j >= cols.length) ? '' : cols[j].trim();
+      }
+
+      final id = get('id');
+      final title = get('title');
+      if (id.isEmpty || title.isEmpty) continue;
+
+      // optional
+      final kana = get('kana');
+      final summary = get('summary');
+      final yearStr = get('year');
+      final year = int.tryParse(yearStr);
+      final genres = _splitTags(get('genres'));   // カンマ or / 区切りを想定
+      final services = _splitTags(get('services'));
+
+      // Anime へのマッピング
+      // ここでは一般的なフィールド名に合わせた例。
+      // （あなたの Anime モデルのコンストラクタに合わせて調整してください）
+      final anime = Anime(
+        id: id,
+        title: title,
+        kana: kana.isEmpty ? null : kana,
+        summary: summary.isEmpty ? null : summary,
+        year: year,
+        genres: genres,
+        // streams: List<StreamInfo> 的な型であれば最小限に詰める
+        streams: services.map((s) => StreamLink(service: s, url: '')).toList(),
+        // 評価関連は最初は空でOK（attachRatingsで合成）
+        avgRating: null,
+        ratingCount: null,
+        userRating: null,
+      );
+
+      out.add(anime);
+    }
+    return out;
+  }
+
+  /// 超軽量CSV行パーサ（ダブルクオート対応・最低限）
+  List<String> _splitCsvLine(String line) {
+    final result = <String>[];
+    final buf = StringBuffer();
+    bool inQuotes = false;
+
+    for (int i = 0; i < line.length; i++) {
+      final ch = line[i];
+      if (ch == '"') {
+        // 連続 "" はエスケープ
+        if (inQuotes && i + 1 < line.length && line[i + 1] == '"') {
+          buf.write('"');
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (ch == ',' && !inQuotes) {
+        result.add(buf.toString());
+        buf.clear();
+      } else {
+        buf.write(ch);
+      }
+    }
+    result.add(buf.toString());
+    return result;
+  }
+
+  List<String> _splitTags(String raw) {
+    if (raw.isEmpty) return const [];
+    final sep = raw.contains(',') ? ',' : raw.contains('/') ? '/' : '、';
+    return raw
+        .split(sep)
+        .map((e) => e.trim())
+        .where((e) => e.isNotEmpty)
+        .toList();
   }
 
   Future<void> _reload() async {
@@ -179,8 +299,7 @@ class _AnimeListPageState extends State<AnimeListPage> {
       final okStar = avg >= _starMin && avg <= _starMax;
 
       final okService = selectedServicesLower.isEmpty ||
-          a.streams
-              .any((s) => selectedServicesLower.contains(s.service.toLowerCase()));
+          a.streams.any((s) => selectedServicesLower.contains(s.service.toLowerCase()));
 
       final y = a.year ?? 0;
       final okYear =

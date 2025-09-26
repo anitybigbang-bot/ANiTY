@@ -12,7 +12,8 @@ dependencies:
   url_launcher: ^6.3.0
   shared_preferences: ^2.5.3
   supabase_flutter: ^2.10.0
-  http: ^1.2.0
+  http: ^1.2.2
+  csv: ^6.0.0
   cupertino_icons: ^1.0.8
   uni_links: ^0.5.1
 

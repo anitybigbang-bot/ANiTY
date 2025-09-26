@@ -1,17 +1,23 @@
 // =====================================
 // lib/repositories/anime_repository.dart（完成版）
-//  - まずは p_services=null で “全部” 取る（確実に表示するため）
-//  - 主要配信フィルタで 0 件/極端に少ない場合は自動で全件にフォールバック
+//  - まずは Googleスプレッドシートを優先して取得
+//  - 取得0件/失敗時は Supabase RPC(get_anime_with_ratings)にフォールバック
+//  - Supabase側は p_services=null で“全件”→必要なら主要配信に絞り
 //  - 500件ずつページング
 // =====================================
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/anime.dart';
+import '../services/sheet_catalog_service.dart';
 
 class AnimeRepository {
   final _client = Supabase.instance.client;
 
-  /// デバッグログ
+  /// シートを優先するか（デフォルト true）
+  final bool useSheetFirst;
+
+  AnimeRepository({this.useSheetFirst = true});
+
   void _log(String msg) {
     if (kDebugMode) debugPrint('[AnimeRepository] $msg');
   }
@@ -27,35 +33,47 @@ class AnimeRepository {
     'Crunchyroll',
   ];
 
-  /// 作品を“全件”取得（ページング）
+  /// 作品一覧を取得
   ///
-  /// - まずは **p_services = null** で（サーバー側で配信フィルタを掛けない）
-  ///   - これで UI に最低限「全部」表示できるようにする
-  /// - もし「主要配信のみ」にしたくなったら、`preferMajorOnly: true` を渡す
-  ///   - ただし結果が 0 件 or 極端に少なければ **自動で全件にフォールバック**
+  /// 1) useSheetFirst=true の場合は **シート** から取得を試行
+  ///    - 1件以上取れたらそれを返す
+  ///    - 0件/例外時は Supabase にフォールバック
+  /// 2) Supabase は p_services=null で“全件”取得（確実に表示）し、
+  ///    preferMajorOnly=true のときだけ主要配信を試し、少なければ全件に戻す
   Future<List<Anime>> fetchAll({bool preferMajorOnly = false}) async {
-    _log('fetchAll(preferMajorOnly=$preferMajorOnly) start');
+    // --- まずはシートを試す ---
+    if (useSheetFirst) {
+      try {
+        _log('fetchAll: try SheetCatalogService.fetch()');
+        final rows = await SheetCatalogService.fetch();
+        _log('fetchAll: sheet rows = ${rows.length}');
+        if (rows.isNotEmpty) {
+          final list = rows.map((m) => Anime.fromSupabase(m)).toList();
+          _log('fetchAll: return from sheet (${list.length})');
+          return list;
+        }
+      } catch (e) {
+        _log('fetchAll: sheet fetch failed -> $e (fallback to Supabase)');
+      }
+    }
 
-    // まずは “安全に” 全件
+    // --- シートが空/失敗 → Supabase RPC にフォールバック ---
+    _log('fetchAll: fallback to Supabase RPC (preferMajorOnly=$preferMajorOnly)');
     if (!preferMajorOnly) {
       final data = await _fetchPaged(pServices: null);
-      _log('fetchAll: got ${data.length} rows (no service filter)');
+      _log('fetchAll: Supabase ALL = ${data.length}');
       return data;
     }
 
-    // preferMajorOnly=true の場合は 2 段構え
+    // preferMajorOnly=true の場合は 2段構え
     final major = await _fetchPaged(pServices: majorServices);
-    _log('fetchAll: majorServices first try => ${major.length} rows');
-
-    // 「0件」「極端に少ない」なら “全件” でフォールバック
+    _log('fetchAll: Supabase majorOnly = ${major.length}');
     if (major.isEmpty || major.length < 10) {
-      _log('fetchAll: fallback to ALL (major too few)');
+      _log('fetchAll: major too few -> fallback ALL');
       final all = await _fetchPaged(pServices: null);
-      _log('fetchAll: fallback got ${all.length} rows');
-      // それでも0ならそのまま返す
+      _log('fetchAll: Supabase ALL (fallback) = ${all.length}');
       return all.isNotEmpty ? all : major;
     }
-
     return major;
   }
 
@@ -63,7 +81,7 @@ class AnimeRepository {
   Future<List<Anime>> _fetchPaged({List<String>? pServices}) async {
     const batch = 500;
     int offset = 0;
-    final all = <Anime>[];
+    final out = <Anime>[];
 
     while (true) {
       final params = <String, dynamic>{
@@ -72,16 +90,14 @@ class AnimeRepository {
         'p_year_max'  : null,
         'p_genres'    : null,
         'p_genre_mode': 'or',
-        'p_services'  : pServices, // ← null ならフィルタなし
+        'p_services'  : pServices, // ← null ならフィルタなし（全件）
         'p_limit'     : batch,
         'p_offset'    : offset,
       };
 
-      // supabase_dart v2系は rpc().select() の形もあるが、ANiTY環境では
-      // すでに List が返る実装で動いていたため、ここではそれに合わせる。
       final result = await _client.rpc('get_anime_with_ratings', params: params);
 
-      // 返ってきた型を堅牢に List<Map<String,dynamic>> へ
+      // List<Map<String,dynamic>> に寄せる
       final List<Map<String, dynamic>> rows;
       if (result is List) {
         rows = result.map<Map<String, dynamic>>((e) {
@@ -89,18 +105,17 @@ class AnimeRepository {
           return Map<String, dynamic>.from(e as Map);
         }).toList();
       } else {
-        // 万一 Map で返った場合などの保険（空にする）
         _log('rpc returned non-list: ${result.runtimeType}');
-        rows = const [];
+        break;
       }
 
       if (rows.isEmpty) break;
 
-      all.addAll(rows.map((m) => Anime.fromSupabase(m)));
+      out.addAll(rows.map((m) => Anime.fromSupabase(m)));
       if (rows.length < batch) break; // 最終ページ
       offset += batch;
     }
 
-    return all;
+    return out;
   }
 }
