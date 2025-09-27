@@ -9,7 +9,7 @@ import 'package:csv/csv.dart';
 /// 推奨: CSV エクスポート URL（速くて安定）
 /// 例）https://docs.google.com/spreadsheets/d/XXXXX/export?format=csv&gid=0
 const String sheetCsvUrl =
-    'https://docs.google.com/spreadsheets/d/XXXXX/export?format=csv&gid=0';
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDuU5C38ca3OUnRXeJVA70SjrWv-vMUBvc6rkegtIyBH-GKmf7x2JBfm-yGu5hYyAsP82w7eQ9RWcL/pubhtml';
 
 /// フォールバック: pubhtml（遅く壊れやすいので最終手段）
 /// 例）https://docs.google.com/spreadsheets/d/e/XXXXXXXX/pubhtml
