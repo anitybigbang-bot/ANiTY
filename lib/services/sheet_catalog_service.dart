@@ -1,174 +1,119 @@
 // lib/services/sheet_catalog_service.dart
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:csv/csv.dart';
+import 'package:crypto/crypto.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
-/// ===============================
-/// 公開スプレッドシートの URL 設定
-/// ===============================
-/// 推奨: CSV エクスポート URL（速くて安定）
-/// 例）https://docs.google.com/spreadsheets/d/XXXXX/export?format=csv&gid=0
+/// === 公開シートの CSV URL を入れてください =======================
+/// 例) https://docs.google.com/spreadsheets/d/e/.../pub?output=csv
 const String sheetCsvUrl =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDuU5C38ca3OUnRXeJVA70SjrWv-vMUBvc6rkegtIyBH-GKmf7x2JBfm-yGu5hYyAsP82w7eQ9RWcL/pub?output=csv';
+    'https://docs.google.com/spreadsheets/d/e/xxxxxxx/pub?output=csv';
 
-/// フォールバック: pubhtml（遅く壊れやすいので最終手段）
-/// 例）https://docs.google.com/spreadsheets/d/e/XXXXXXXX/pubhtml
-const String sheetHtmlUrl =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQDuU5C38ca3OUnRXeJVA70SjrWv-vMUBvc6rkegtIyBH-GKmf7x2JBfm-yGu5hYyAsP82w7eQ9RWcL/pubhtml';
+/// 任意（フォールバック用）。未使用ならそのままでOK
+const String sheetHtmlUrl = '';
 
-/// 想定ヘッダー（今回のシート構成）:
-/// anilist_id, title_native, title_romaji, title_english, year, streams_json
-///
-/// 返り値は Supabase RPC に近い形の Map 配列:
-/// { id, title, kana, year, genres(List<String>), streams(List<Map>),
-///   anilist_id, summary, avg_rating:null, rating_count:null, user_rating:null }
 class SheetCatalogService {
-  /// 一覧取得（CSV → 失敗したら pubhtml をパース）
+  /// CSV → 正規化 Map<List> を返す
   static Future<List<Map<String, dynamic>>> fetch() async {
-    // 1) まず CSV を試す
-    final csv = await _tryFetchCsv(sheetCsvUrl);
-    if (csv != null) {
-      return _normalizeFromRows(csv);
+    final rows = await _tryFetchCsv(sheetCsvUrl);
+    if (rows == null || rows.isEmpty) {
+      throw Exception('シートのCSVが取得できませんでした。URL/公開設定を確認してください。');
     }
-
-    // 2) CSV が取れないときは、pubhtml を簡易パース（遅い/壊れやすい → 最終手段）
-    final htmlRows = await _tryFetchHtmlTable(sheetHtmlUrl);
-    if (htmlRows != null) {
-      return _normalizeFromRows(htmlRows);
-    }
-
-    throw Exception('シートの取得に失敗しました（CSV も HTML も読めず）');
+    return _normalizeFromRows(rows);
   }
 
-  // ---------------------------
-  // CSV を取得して 2次元配列へ
-  // ---------------------------
+  /// CSV を 2次元配列に
   static Future<List<List<String>>?> _tryFetchCsv(String url) async {
-    try {
-      final res = await http.get(Uri.parse(url));
-      if (res.statusCode != 200) return null;
+    final res = await http.get(Uri.parse(url));
+    if (res.statusCode != 200) return null;
 
-      // 一応 content-type を見て、CSVでなさそうなら null
-      final ct = res.headers['content-type'] ?? '';
-      if (!ct.contains('text/csv') && !res.body.contains(',')) {
-        return null;
-      }
+    final text = const Utf8Decoder().convert(res.bodyBytes);
+    final rows = const CsvToListConverter(
+      eol: '\n',
+      shouldParseNumbers: false,
+    ).convert(text);
 
-      // 文字化け対策で bytes→utf8
-      final text = const Utf8Decoder().convert(res.bodyBytes);
-      final rows = const CsvToListConverter(
-        eol: '\n',
-        shouldParseNumbers: false,
-      ).convert(text);
-
-      // すべて String 化
-      return rows
-          .map((r) => r.map((e) => (e ?? '').toString()).toList())
-          .toList()
-          .cast<List<String>>();
-    } catch (_) {
-      return null;
-    }
+    return rows
+        .map((r) => r.map((e) => (e ?? '').toString()).toList())
+        .toList()
+        .cast<List<String>>();
   }
 
-  // ----------------------------------------
-  // pubhtml の <table> を超簡易にパースして 2次元配列へ
-  // ※ レイアウト変更に弱いので CSV 使えるなら CSV を使って！
-  // ----------------------------------------
-  static Future<List<List<String>>?> _tryFetchHtmlTable(String url) async {
-    try {
-      final res = await http.get(Uri.parse(url));
-      if (res.statusCode != 200) return null;
-      final html = const Utf8Decoder().convert(res.bodyBytes);
-
-      // <tr> ... </tr> 単位で拾い、各 <td> をテキスト抽出
-      final rowExp = RegExp(r'<tr[^>]*>(.*?)</tr>', caseSensitive: false, dotAll: true);
-      final cellExp = RegExp(r'<t[dh][^>]*>(.*?)</t[dh]>', caseSensitive: false, dotAll: true);
-
-      final rows = <List<String>>[];
-      for (final m in rowExp.allMatches(html)) {
-        final rowHtml = m.group(1) ?? '';
-        final cells = <String>[];
-        for (final c in cellExp.allMatches(rowHtml)) {
-          final raw = c.group(1) ?? '';
-          final text = _stripHtml(raw)
-              .replaceAll('\u00A0', ' ') // nbsp
-              .replaceAll('\n', ' ')
-              .replaceAll(RegExp(r'\s+'), ' ')
-              .trim();
-          cells.add(text);
-        }
-        if (cells.isNotEmpty) rows.add(cells);
-      }
-
-      if (rows.isEmpty) return null;
-      return rows;
-    } catch (_) {
-      return null;
-    }
-  }
-
-  // HTML タグ除去（超簡易）
-  static String _stripHtml(String src) =>
-      src.replaceAll(RegExp(r'<[^>]*>'), '');
-
-  // ---------------------------
-  // 2次元配列 → 正規化 Map 配列
-  // ---------------------------
+  /// 2次元配列 → ANiTYの内部形式に正規化
+  ///
+  /// 期待最小ヘッダー: anilist_id, title_native, title_english, year, streams_json
+  /// なくても良い: title, kana, genres, summary など（存在すれば使う）
   static List<Map<String, dynamic>> _normalizeFromRows(List<List<String>> rows) {
     if (rows.isEmpty) return [];
-
-    // 1行目はヘッダー
     final headers = rows.first.map((e) => e.trim()).toList();
     final dataRows = rows.skip(1);
 
-    // カラム位置を特定（見出しの大小/全角半角は前提通りで扱う）
-    int idxOf(String name) => headers.indexWhere((h) => h == name);
+    // ヘッダーのインデックス取得（無ければ -1）
+    int idx(String name) => headers.indexWhere((h) => h == name);
 
-    final iAnilist = idxOf('anilist_id');
-    final iNative  = idxOf('title_native');
-    final iRomaji  = idxOf('title_romaji');
-    final iEnglish = idxOf('title_english');
-    final iYear    = idxOf('year');
-    final iStreams = idxOf('streams_json');
+    final iAnilist   = idx('anilist_id');
+    final iTitleNat  = idx('title_native');
+    final iTitleEng  = idx('title_english');
+    final iYear      = idx('year');
+    final iStreams   = idx('streams_json');
+
+    // 任意項目（存在すれば利用）
+    final iTitle     = idx('title');
+    final iKana      = idx('kana');
+    final iGenres    = idx('genres');
+    final iSummary   = idx('summary');
 
     final out = <Map<String, dynamic>>[];
 
     for (final r in dataRows) {
-      // 行長に注意して安全に取り出すヘルパ
-      String get(int idx) => (idx >= 0 && idx < r.length) ? (r[idx]).trim() : '';
+      // 取り出しヘルパ
+      String at(int i) => (i >= 0 && i < r.length) ? r[i].trim() : '';
 
-      // ---- 型整形（Anime 相当）----
-      final anilistRaw = get(iAnilist);
-      if (anilistRaw.isEmpty) continue; // 主キー相当が無ければスキップ
+      // タイトル決定（優先順: title_native > title_english > title）
+      final titleNative  = at(iTitleNat);
+      final titleEnglish = at(iTitleEng);
+      final titleAny     = at(iTitle);
+      final title = (titleNative.isNotEmpty
+              ? titleNative
+              : (titleEnglish.isNotEmpty ? titleEnglish : titleAny))
+          .trim();
 
-      final id = anilistRaw; // 文字列として流用
-      final anilistId = int.tryParse(anilistRaw);
-
-      final title   = get(iRomaji);   // 表示タイトルはローマ字を採用
-      final kana    = get(iNative);   // 日本語原題は kana 相当へ
-      final summary = get(iEnglish);  // 英語題を summary に補助的に格納
-
-      // year
+      // 年
       int? year;
-      final y = get(iYear);
+      final y = at(iYear);
       if (y.isNotEmpty) {
         final n = int.tryParse(y);
         if (n != null) year = n;
       }
 
-      // streams: JSON 配列推奨（例: [{"service":"Netflix","region":"JP"}]）
-      dynamic streams = <dynamic>[];
-      final streamsStr = get(iStreams);
-      if (streamsStr.isNotEmpty) {
+      // anilist_id
+      int? anilistId;
+      final aid = at(iAnilist);
+      if (aid.isNotEmpty) {
+        final n = int.tryParse(aid);
+        if (n != null) anilistId = n;
+      }
+
+      // ID: anilist_id > (title + year のハッシュ)
+      String id;
+      if (anilistId != null) {
+        id = 'anilist:$anilistId';
+      } else {
+        final base = '${title}|${year ?? ''}';
+        id = 'sheet:${md5.convert(convert.utf8.encode(base)).toString()}';
+      }
+
+      // streams_json（JSON推奨）→ List<Map> へ
+      List<dynamic> streams = const [];
+      final streamsJson = at(iStreams);
+      if (streamsJson.isNotEmpty) {
         try {
-          final decoded = json.decode(streamsStr);
-          if (decoded is List) {
-            streams = decoded;
-          }
+          final decoded = json.decode(streamsJson);
+          if (decoded is List) streams = decoded;
         } catch (_) {
-          // もし「Netflix,Prime」などのカンマ区切りだったら service 名だけで配列化
-          final byComma = streamsStr
+          // カンマ区切り "Netflix,Prime Video" などに緊急対応
+          final byComma = streamsJson
               .split(RegExp(r'[,、]'))
               .map((s) => s.trim())
               .where((s) => s.isNotEmpty)
@@ -179,16 +124,30 @@ class SheetCatalogService {
         }
       }
 
+      // 任意: kana / genres / summary
+      final kana = at(iKana);
+      final genresStr = at(iGenres);
+      final genres = genresStr.isEmpty
+          ? <String>[]
+          : genresStr
+              .split(RegExp(r'[,、]\s*|\s+'))
+              .map((s) => s.trim())
+              .where((s) => s.isNotEmpty)
+              .toList();
+      final summary = at(iSummary);
+
+      // 最低限、タイトルが無い行はスキップ
+      if (title.isEmpty) continue;
+
       out.add({
         'id': id,
         'title': title,
-        'kana': kana,
+        'kana': kana.isEmpty ? null : kana,
         'year': year,
-        'genres': <String>[],   // このシートには genres が無いので空で運用
-        'streams': streams,
+        'genres': genres,
+        'streams': streams,          // List<Map> or []
         'anilist_id': anilistId,
-        'summary': summary,
-
+        'summary': summary.isEmpty ? null : summary,
         // Supabase RPC 互換のダミー列
         'avg_rating': null,
         'rating_count': null,
@@ -197,5 +156,5 @@ class SheetCatalogService {
     }
 
     return out;
-  }
+    }
 }
